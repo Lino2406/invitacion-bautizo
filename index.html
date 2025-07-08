@@ -12,35 +12,35 @@
       background-image: url('09.jpg');
       background-size: cover;
       background-position: center;
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
       background-attachment: fixed;
       backdrop-filter: brightness(0.9);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
     }
 
     h1, h2 {
       background-color: rgba(0, 0, 0, 0.7);
-      color: #ffffff;
       padding: 0.6rem 1rem;
       border-radius: 10px;
       display: inline-block;
       font-weight: bold;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      max-width: 90%;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
 
     h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-top: 2rem;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       max-width: 700px;
       margin: 1rem auto;
       background: rgba(0, 0, 0, 0.5);
@@ -49,7 +49,9 @@
     }
 
     img {
-      max-width: 90%;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
       border-radius: 15px;
       margin: 2rem auto;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
@@ -62,7 +64,7 @@
     #play-button {
       margin: 1rem auto;
       padding: 0.8rem 1.5rem;
-      font-size: 1.2rem;
+      font-size: 1rem;
       background-color: #fff;
       color: #444;
       border: none;
@@ -72,8 +74,48 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    #play-button:hover {
-      background-color: #f0f0f0;
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 350px;
+      margin: 1rem auto;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .responsive-pair {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .responsive-pair iframe,
+    .responsive-pair img {
+      flex: 1 1 300px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Media Queries para pantallas pequeñas */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+      }
+      #play-button {
+        font-size: 0.95rem;
+        padding: 0.6rem 1rem;
+      }
     }
   </style>
 </head>
@@ -94,12 +136,17 @@
 
   <p>Los esperamos el 26 de julio del 2025: </p>
   <p>⛪Dirección de la iglesia ⛪: </p>
-  <p><strong>La misa es a las 11:20 am</strong></p>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.084936061238!2d-98.1636059!3d20.0468848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d05e762bf410bb%3A0xa07247cd265c06be!2sParroquia%20de%20San%20Nicolas%20de%20Tolentino!5e0!3m2!1ses-419!2smx!4v1751949661074!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <p>🎊Dirección del salón 🎊: </p>
-  <p><strong>Llegada al salón 1:15 pm</strong></p>
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1751949171747!6m8!1m7!1s4shLcO_zmgN_j4Y-pcRqsw!2m2!1d20.04805230562017!2d-98.16375138895336!3f135.98236993820012!4f-4.778390703769176!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p><strong>La misa se realizará a las 11:20 am</strong></p>
+  <div class="responsive-pair">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.084936061238!2d-98.1636059!3d20.0468848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d05e762bf410bb%3A0xa07247cd265c06be!2sParroquia%20de%20San%20Nicolas%20de%20Tolentino!5e0!3m2!1ses-419!2smx!4v1751949661074!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
 
+  <p>🎊Dirección del salón 🎊: </p>
+  <p><strong>Los esperamos a partir 1:15 pm</strong></p>
+  <div class="responsive-pair">
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1751949171747!6m8!1m7!1s4shLcO_zmgN_j4Y-pcRqsw!2m2!1d20.04805230562017!2d-98.16375138895336!3f135.98236993820012!4f-4.778390703769176!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  
   <img src="06.jpg" alt="Imagen 2" />
 
   <div class="section">
